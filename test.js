@@ -117,34 +117,16 @@
 // }
 // console.log(findAffordableProducts(products))
 
-// const rawPrices = ["₹500", "₹1,500", "₹10,000", "₹2,500"];
-// function onlyproduct (price){
-//     let updatePrices=[]
-//     for(const item of price){
-//         const cleaned = item.replace('₹',"")
-//         const newPrices = cleaned.replace(',',"").trim()
-//         updatePrices.push(Number(newPrices))
+const rawPrices = ["₹500", "₹1,500", "₹10,000", "₹2,500"];
+function onlyproduct (price){
+    let updatePrices=[]
+    for(const item of price){
+        const cleaned = item.replace('₹',"")
+        const newPrices = cleaned.replace(',',"").trim()
+        updatePrices.push(Number(newPrices))
 
-//     }
-//     return updatePrices
-
-// }
-// console.log(onlyproduct(rawPrices))
-
-const inventory = [
-  { name: "Mouse", priceStr: "₹500" },
-  { name: "Keyboard", priceStr: "₹1,500" },
-  { name: "Monitor", priceStr: "₹10,000" },
-  { name: "Headphones", priceStr: "₹2,500" },
-];
-function clearInventory(data) {
-  let newData = [];
-  for (const items of data) {
-    const cleanData = Number(items.priceStr.replace("₹", "").replace(",", ""))
-    if (cleanData <= 2000) {
-      newData.push(items.name);
     }
-  }
-  return newData;
+    return updatePrices
+
 }
-console.log(clearInventory(inventory));
+console.log(onlyproduct(rawPrices))

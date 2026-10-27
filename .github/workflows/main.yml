@@ -28,4 +28,4 @@ jobs:
 
     # 4. Apni JS file ko run karein (yahan apni main file ka naam likhein)
     - name: Run JavaScript file
-      run: node test.js
+      run: node runAll.js
