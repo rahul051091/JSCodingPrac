@@ -1,0 +1,31 @@
+name: Run JS Tests
+
+# Yeh workflow tab chalega jab aap code push karoge
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Repository ka code checkout karein
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # 2. Node.js setup karein (version apne project ke hisaab se rakh sakte hain jaise 18 ya 20)
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    # 3. Dependencies install karein (agar package.json hai)
+    - name: Install dependencies
+      run: npm install
+
+    # 4. Apni JS file ko run karein (yahan apni main file ka naam likhein)
+    - name: Run JavaScript file
+      run: node index.js
